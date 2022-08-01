@@ -1,7 +1,12 @@
 name: first_work
-on:
-  # Runs on all branches
+on: 
+  # run on all branches
   push: 
+  # enable manual execution
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 jobs: 
   first_job:
     runs-on: ubuntu-latest
