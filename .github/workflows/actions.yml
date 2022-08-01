@@ -1,8 +1,7 @@
 name: first_work
 on:
+  # Runs on all branches
   push: 
-    branches: 
-      - main
 jobs: 
   first_job:
     runs-on: ubuntu-latest
@@ -12,7 +11,7 @@ jobs:
   running_script_from_code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # checkout/clone the repository in the runner GITHUB_WORKSPACE
+      - uses: actions/checkout@v2 # Checkout/clone the repository in the runner GITHUB_WORKSPACE
       - name: run script
         run: chmod 755 script.sh && ./script.sh
       - name: running multiple line
