@@ -43,7 +43,7 @@ jobs:
   download_artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: download artfacts in different job
+      - name: download artifacts in different job
         uses: actions/download-artifact@v2
         with: 
           name: artifact
