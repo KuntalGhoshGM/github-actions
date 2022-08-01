@@ -1,0 +1,11 @@
+name: first_work
+on:
+  push: 
+    branches: 
+      - main
+jobs: 
+  first_job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Execute Single Line
+        run: cat /etc/os-release
