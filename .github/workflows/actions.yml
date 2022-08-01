@@ -55,6 +55,8 @@ jobs:
       - running_script_from_code
   # integration Teams Channel with GithUb Actions
   GitHub_Actions_to_Teams:
+    needs:
+      - download_artifacts
     runs-on: ubuntu-latest
     steps:
       - name: send message
