@@ -1,7 +1,12 @@
 name: first_work
-on:
-  # Runs on all branches
+on: 
+  # run on all branches
   push: 
+  # enable manual execution
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 jobs: 
   first_job:
     runs-on: ubuntu-latest
@@ -43,7 +48,7 @@ jobs:
   download_artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: download artfacts in different job
+      - name: download artifacts in different job
         uses: actions/download-artifact@v2
         with: 
           name: artifact
@@ -53,3 +58,17 @@ jobs:
     needs:
       - installing_packages
       - running_script_from_code
+  # integration Teams Channel with GithUb Actions
+  GitHub_Actions_to_Teams:
+    needs:
+      - download_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: send message
+        uses: jdcargile/ms-teams-notification@v1.3
+        with:
+          github-token: ${{ github.token }} # this will use the runner's token.
+          ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          notification-summary: Message from Repository created for General Mills Session. 
+          notification-color: 17a2b8
+          timezone: Asia/Kolkata
