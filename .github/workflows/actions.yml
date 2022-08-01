@@ -48,7 +48,7 @@ jobs:
         uses: actions/download-artifact@v2
         with: 
           name: artifact
-          path: data.txt
+          path: ./
       - name: read the artfacts file
         run: cat data.txt
     needs:
