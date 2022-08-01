@@ -1,8 +1,7 @@
 name: first_work
 on:
+  # runs on all branches on PUSH
   push: 
-    branches: 
-      - main
 jobs: 
   first_job:
     runs-on: ubuntu-latest
