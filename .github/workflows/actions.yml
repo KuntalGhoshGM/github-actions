@@ -53,3 +53,4 @@ jobs:
         run: cat data.txt
     needs:
       - installing_packages
+      - running_script_from_code
