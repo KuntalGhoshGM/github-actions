@@ -22,7 +22,7 @@ jobs:
   installing_packages:
     runs-on: ubuntu-latest
     steps:
-      - name: installing awscli
+      - name: installing awscli and other artifacts
         run: | 
           sudo apt-get update -y
           sudo apt-get install -y awscli wget 
