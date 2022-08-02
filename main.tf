@@ -1,12 +1,12 @@
 provider "google" {
-  project     = "KuntalGCPProject"
+  project     = "kulbhushanmayer"
   region  = "us-central1"
   zone    = "us-central1-a"
 }
 
 data "google_compute_disk" "demo" {
     name = "demo"
-    project = "KuntalGCPProject"
+    project = "kulbhushanmayer"
 }
 
 output "demo" {
